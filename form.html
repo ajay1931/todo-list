@@ -4,18 +4,68 @@
         <table border="1">
             <tr>
                 <td>Name</td>
-                <td><input type="text" placeholder="enter your name" required></td>
+                <td><input type="text" placeholder="enter your name" id="ename"></td>
             </tr>
             <tr>
                 <td>Age</td>
-                <td><input type="number" placeholder="enter your age" required></td>
+                <td><input type="number" placeholder="enter your age" id="eage"></td>
             </tr>
             <tr>
                 <td>Gender</td>
                 <td><input type="radio" name=gender>Male
-                <input type="radio" name=gender>Female</td>
+                    <input type="radio" name=gender>Female
+                </td>
             </tr>
-            
+            <tr>
+                <td>course</td>
+                <td>
+                    <select>
+                        <option>physics</option>
+                        <option>chemistry</option>
+                        <option>maths</option>
+                        <option>science</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>email ID</td>
+                <td>
+                    <input type="email" placeholder="enter your email">
+                </td>
+            </tr>
+            <tr>
+                <td> <button onclick="update(event)">save</button> </td>
+            </tr>
         </table>
     </form>
 </div>
+
+<table border="1" id="saved">
+    <tr>
+        <td>NAME</td>
+        <td>AGE</td>
+        <td>COURSE</td>
+        <td>GENDER</td>
+        <td>EMAIL</td>
+        <td>ACTION</td>
+    </tr>
+
+</table>
+
+
+<script>
+    var saved = document.getElementById("saved")
+
+    var ename = document.getElementById("ename")
+    var eage = document.getElementById("eage")
+    function update(event) {
+        var newrow = document.createElement("tr")
+        newrow.innerHTML = ename.value
+        newrow.innerHTML = eage.value
+        event.append(newrow)
+        console.log(ename)
+
+
+    }
+
+</script>
